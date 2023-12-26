@@ -1,0 +1,29 @@
+.titleDiv {
+  position: relative;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, 35%);
+
+  font-size: 35px;
+  max-width: 800px;
+
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.Title {
+  order: 0;
+  margin-top: 20px;
+  margin-left: -40px;
+}
+
+.logo {
+  width: 5em;
+  pointer-events: none;
+  margin-bottom: 10%;
+
+  order: 0;
+}

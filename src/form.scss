@@ -1,0 +1,22 @@
+.formWrapper {
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+  margin: 100px
+}
+
+#floatingInput {
+  max-width: 700px;
+  min-width: 550px;
+
+  transition: ease-in-out all .5s;
+}
+
+@media (max-width: 768px) {
+    #floatingInput {
+        max-width: 500px;
+        min-width: 350px;
+    }
+}
