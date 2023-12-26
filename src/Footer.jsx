@@ -8,7 +8,7 @@ function TopButtons() {
     return (
             <CFooter className={"FooterComponent"}>
                 <div>
-                    <CLink href="https://github.com/Emad-Eldin-G/Harp-Seal" target={'_blank'}>HarpSeal</CLink>
+                    <CLink href="https://github.com/HarpSeal-com" target={'_blank'}>HarpSeal</CLink>
                     <span>&copy; 2023 opensource.</span>
                 </div>
                 <div>

@@ -8,15 +8,32 @@
 }
 
 #floatingInput {
-  max-width: 700px;
-  min-width: 550px;
+  width: 700px;
+  height: 50px;
 
   transition: ease-in-out all .5s;
 }
 
-@media (max-width: 768px) {
+#selector {
+  width: 700px;
+  height: 55px;
+
+  transition: ease-in-out all .5s;
+}
+
+@media (max-width: 750px) {
     #floatingInput {
-        max-width: 500px;
-        min-width: 350px;
+      width: 500px;
     }
+    #selector {
+      width: 500px;
+    }
+}
+@media (max-width: 500px) {
+  #floatingInput {
+    width: 350px;
+  }
+  #selector {
+    width: 350px;
+  }
 }
