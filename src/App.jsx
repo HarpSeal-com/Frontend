@@ -8,10 +8,13 @@ function App() {
   //const [count, setCount] = useState(0)
 
   return (
+    <>
+    <h1 className={"Title"}>HarpSeal</h1>
+
     <div className={"titleDiv"}>
         <img src={logo} className={"logo"} alt="logo"/>
-        <h1 className={"Title"}>HarpSeal</h1>
     </div>
+    </>
   )
 }
 

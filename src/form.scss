@@ -1,10 +1,16 @@
 .formWrapper {
+  position: relative;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, 40%);
+
   display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
-  margin: 100px
+  max-width: 700px;
+
 }
 
 #floatingInput {
@@ -21,7 +27,18 @@
   transition: ease-in-out all .5s;
 }
 
+#Submit {
+  margin-top: 20px;
+  margin-right: auto;
+}
+#Submit:hover {
+  scale: 1.1;
+}
+
 @media (max-width: 750px) {
+    #formWrapper {
+      max-width: 500px;
+    }
     #floatingInput {
       width: 500px;
     }
@@ -30,10 +47,13 @@
     }
 }
 @media (max-width: 500px) {
-  #floatingInput {
-    width: 350px;
-  }
-  #selector {
-    width: 350px;
-  }
+    #formWrapper {
+        max-width: 350px;
+    }
+    #floatingInput {
+      width: 350px;
+    }
+    #selector {
+      width: 350px;
+    }
 }
