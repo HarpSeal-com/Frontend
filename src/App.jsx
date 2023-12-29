@@ -7,12 +7,17 @@ import logo from './assets/logo.png'
 function App() {
   //const [count, setCount] = useState(0)
 
+    const turnOnAnimation = () => {
+      // Turn animation-play-state to running
+      document.getElementById("logo").style.animationPlayState = "running";
+    }
+
   return (
     <>
     <h1 className={"Title"}>HarpSeal</h1>
 
     <div className={"titleDiv"}>
-        <img src={logo} className={"logo"} alt="logo"/>
+        <img src={logo} className={"logo"} id={"logo"} alt="logo" onMouseEnter={turnOnAnimation}/>
     </div>
     </>
   )

@@ -26,29 +26,21 @@ function Form() {
 
     }
 
-    const isButtonDisabled = productName.length > 0 && category.length > 0;
+    const isButtonDisabled = productName.length > 1 && category.length > 0;
 
     return (
         <div className={"formWrapper"}>
             <CFormInput type="text" id="floatingInput" floatingClassName="mb-3" floatingLabel="Product Name" placeholder="" onChange={productUpdate} required={true}/>
 
             <CFormSelect size="lg" className="" aria-label="Large select example" id={"selector"} onChange={categoryUpdate}>
-                <option>Choose item category</option>
-                <option value="1">Technology</option>
-                <option value="2">Shoes</option>
-                <option value="3">Clothes</option>
-                <option value="4">Furniture</option>
-                <option value="5">Food and Beverage</option>
+                <option value="0">Choose item category</option>
+                <option value="1">Phones</option>
+                <option value="2">Laptops</option>
+                <option value="3">Consoles</option>
+                <option value="4">TVs</option>
             </CFormSelect>
 
             <CButton color="light" id={"Submit"} disabled={!isButtonDisabled} onMouseEnter={alertSubmit}>Seal the Deal</CButton>
-
-            <CAlert color="dark" id={"buttonNotification"}>
-                Please search for a product
-            </CAlert>
-            <CAlert color="dark" id={"buttonNotification"}>
-                Please select a category
-            </CAlert>
 
         </div>
     )

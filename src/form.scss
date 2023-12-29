@@ -9,19 +9,20 @@
     align-items: center;
     justify-content: center;
 
-  max-width: 700px;
+  max-width: 600px;
 
+  transition: ease-in-out all .5s;
 }
 
 #floatingInput {
-  width: 700px;
+  width: 600px;
   height: 50px;
 
   transition: ease-in-out all .5s;
 }
 
 #selector {
-  width: 700px;
+  width: 600px;
   height: 55px;
 
   transition: ease-in-out all .5s;
@@ -36,8 +37,8 @@
 }
 
 @media (max-width: 750px) {
-    #formWrapper {
-      max-width: 500px;
+    .formWrapper {
+      width: 500px;
     }
     #floatingInput {
       width: 500px;
@@ -47,13 +48,13 @@
     }
 }
 @media (max-width: 500px) {
-    #formWrapper {
-        max-width: 350px;
+    .formWrapper {
+        width: 350px;
     }
     #floatingInput {
-      width: 350px;
+        width: 350px;
     }
     #selector {
-      width: 350px;
+        width: 350px;
     }
 }

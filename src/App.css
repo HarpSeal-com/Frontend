@@ -24,7 +24,7 @@
   margin: 5px;
 }
 
-.logo {
+#logo {
   width: 6em;
   pointer-events: none;
   margin-bottom: 10%;
@@ -32,10 +32,6 @@
   order: 0;
   animation: wobble-hor-bottom ease-in-out 3s both infinite;
   animation-play-state: paused;
-}
-
-.logo:hover {
-  animation-play-state: running;
 }
 
 @-webkit-keyframes wobble-hor-bottom {
