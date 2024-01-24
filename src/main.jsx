@@ -8,9 +8,7 @@ import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-      <TopButtons />
       <App />
-      <Form />
       <Footer />
   </React.StrictMode>,
 )

@@ -1,24 +1,48 @@
 //import { useState } from 'react'
 //import reactLogo from './assets/react.svg'
 //import viteLogo from '/vite.svg'
+import React, {useEffect, useState} from 'react';
 import './App.css'
 import logo from './assets/logo.png'
+import {ProductContext} from "./Contexts/ProductContext.jsx";
+import Form from "./Form.jsx";
+import Result from "./Result.jsx";
+import TopButtons from "./TopBar.jsx";
 
 function App() {
   //const [count, setCount] = useState(0)
+    const [productName, setProductName] = useState("")
+    const [category, setCategory] = useState("")
+    const [buttonPressed, setButtonPressed] = useState(false)
+    const [apiData, setApiData] = useState({})
+    const [autoRedirect, setAutoRedirect] = useState(false);
+
 
     const turnOnAnimation = () => {
-      // Turn animation-play-state to running
+      // Turn animation-play-state to running      
       document.getElementById("logo").style.animationPlayState = "running";
-    }
+  }
+
+  const turnAnimationOff = () => {
+      // Turn animation-play-state to paused
+      document.getElementById("logo").style.animationPlayState = "paused";
+  }
+
 
   return (
     <>
-    <h1 className={"Title"}>HarpSeal</h1>
+    <ProductContext.Provider value={{autoRedirect, setAutoRedirect}}>
+        <TopButtons />
+    </ProductContext.Provider>
 
-    <div className={"titleDiv"}>
-        <img src={logo} className={"logo"} id={"logo"} alt="logo" onMouseEnter={turnOnAnimation}/>
+    <h1 className={"Title"}>HarpSeal</h1>
+    <div className={"titleDiv"} onMouseEnter={turnOnAnimation} onMouseLeave={turnAnimationOff}>
+        <img src={logo} className={"logo"} id={"logo"} alt="logo"/>
     </div>
+
+    <ProductContext.Provider value={{productName, setProductName, category, setCategory, buttonPressed, setButtonPressed, apiData, setApiData, autoRedirect}}>
+    {!buttonPressed ? <Form/> : autoRedirect ?  <Result/>}
+    </ProductContext.Provider>
     </>
   )
 }

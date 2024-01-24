@@ -1,13 +1,16 @@
-import {useState} from "react";
+import {createContext, useContext, useEffect, useState} from "react";
 import './form.scss'
 import '@coreui/coreui/dist/css/coreui.min.css'
-import {CFormInput, CFormSelect, CButton, CAlert} from "@coreui/react";
+import {CFormInput, CFormSelect, CButton, CAlert, CCallout} from "@coreui/react";
+import {ProductContext} from "./Contexts/ProductContext";
 
 function Form() {
-    const [productName, setProductName] = useState("")
-    const [category, setCategory] = useState("")
-    console.log(productName)
-    console.log(category)
+    // Set states as global contexts
+
+    const {productName, setProductName} = useContext(ProductContext);
+    const {category, setCategory} = useContext(ProductContext);
+    const {buttonPressed, setButtonPressed} = useContext(ProductContext);
+    const {apiData, setApiData} = useContext(ProductContext);
 
     const productUpdate = (e) => {
         setProductName(e.target.value)
@@ -26,7 +29,35 @@ function Form() {
 
     }
 
-    const isButtonDisabled = productName.length > 1 && category.length > 0;
+    const apiCall = () => {
+
+        // Make the API request
+        fetch("http://127.0.0.1:8000/api/getProduct", {
+            method: 'POST', // or 'GET', 'PUT', etc.
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(
+                {
+                "product": productName,
+                "category": category
+                }
+            ),
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                // Handle the API response data
+                setApiData(data);
+            })
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+            });
+
+        setButtonPressed(true)
+    }
+
+    const isButtonDisabled = productName.length > 2 && category.length > 0;
 
     return (
         <div className={"formWrapper"}>
@@ -40,8 +71,7 @@ function Form() {
                 <option value="4">TVs</option>
             </CFormSelect>
 
-            <CButton color="light" id={"Submit"} disabled={!isButtonDisabled} onMouseEnter={alertSubmit}>Seal the Deal</CButton>
-
+            <CButton color="light" id={"Submit"} disabled={!isButtonDisabled} onMouseEnter={alertSubmit} onClick={apiCall}>Seal the Deal</CButton>
         </div>
     )
 }
