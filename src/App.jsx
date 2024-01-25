@@ -41,7 +41,7 @@ function App() {
     </div>
 
     <ProductContext.Provider value={{productName, setProductName, category, setCategory, buttonPressed, setButtonPressed, apiData, setApiData, autoRedirect}}>
-    {!buttonPressed ? <Form/> : autoRedirect ? window.open(apiData['Link'], '_blank') && <Result/> : <Result/>}
+        {!buttonPressed ? <Form/> : autoRedirect ? window.open('http://localhost:8080', '_blank') && <Result/>: <Result/>}
     </ProductContext.Provider>
     </>
   )

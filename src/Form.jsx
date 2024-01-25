@@ -31,29 +31,6 @@ function Form() {
 
     const apiCall = () => {
 
-        // Make the API request
-        fetch("http://127.0.0.1:8000/api/getProduct", {
-            method: 'POST', // or 'GET', 'PUT', etc.
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(
-                {
-                "product": productName,
-                "category": category
-                }
-            ),
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                // Handle the API response data
-                setApiData(data);
-            })
-            .catch((error) => {
-                console.error('Error fetching data:', error);
-            });
-
         setButtonPressed(true)
     }
 
