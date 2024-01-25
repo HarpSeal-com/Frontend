@@ -1,5 +1,5 @@
 //import {useState} from "react";
-import './Footer.scss'
+import '../Style/Footer.scss'
 import '@coreui/coreui/dist/css/coreui.min.css'
 import {CFooter, CLink} from "@coreui/react";
 

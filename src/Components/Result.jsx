@@ -1,5 +1,4 @@
 import {createContext, useContext, useEffect, useState} from "react";
-import './form.scss'
 import '@coreui/coreui/dist/css/coreui.min.css'
 import {
     CCard,
@@ -7,8 +6,8 @@ import {
     CCardBody,
     CCardTitle, CListGroupItem, CListGroup, CCardText, CCardLink, CButton
 } from "@coreui/react";
-import {ProductContext} from "./Contexts/ProductContext";
-import amazonIcon from './assets/amazon-480.png'
+import {ProductContext} from "../Contexts/ProductContext.jsx";
+import amazonIcon from '../assets/amazon-480.png'
 
 
 function Result() {
@@ -20,7 +19,7 @@ function Result() {
             <CCardBody>
                 <CCardTitle>HarpSeal found the Deal</CCardTitle>
                 <CCardText>
-                    
+
                 </CCardText>
             </CCardBody>
             <CListGroup flush>

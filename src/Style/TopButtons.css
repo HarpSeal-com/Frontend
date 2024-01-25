@@ -1,0 +1,25 @@
+.formButtonsTop {
+  width: 100vw;
+  height: auto;
+  margin: 15px;
+
+  display: flex;
+    justify-content: left;
+    align-items: start;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+}
+
+.formButtonsTopLabel {
+  font-family: Gotham, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  margin-top: 5px;
+  margin-left: 5px;
+  font-weight: 900;
+  color: white;
+}
+
+#formSwitchCheckDefaultLg {
+  width: 50px;
+
+}

@@ -1,4 +1,5 @@
 //import {useState} from "react";
+import '../Style/TopButtons.css'
 import '@coreui/coreui/dist/css/coreui.min.css'
 import {CFormSwitch} from "@coreui/react";
 import {useState, useEffect, createContext, useContext} from "react";

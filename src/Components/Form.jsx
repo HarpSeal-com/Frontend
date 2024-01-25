@@ -1,8 +1,8 @@
 import {createContext, useContext, useEffect, useState} from "react";
-import './form.scss'
+import '../Style/form.scss'
 import '@coreui/coreui/dist/css/coreui.min.css'
 import {CFormInput, CFormSelect, CButton, CAlert, CCallout} from "@coreui/react";
-import {ProductContext} from "./Contexts/ProductContext";
+import {ProductContext} from "../Contexts/ProductContext.jsx";
 
 function Form() {
     // Set states as global contexts

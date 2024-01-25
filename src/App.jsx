@@ -2,12 +2,12 @@
 //import reactLogo from './assets/react.svg'
 //import viteLogo from '/vite.svg'
 import React, {useEffect, useState} from 'react';
-import './App.css'
+import './Style/App.css'
 import logo from './assets/logo.png'
 import {ProductContext} from "./Contexts/ProductContext.jsx";
-import Form from "./Form.jsx";
-import Result from "./Result.jsx";
-import TopButtons from "./TopBar.jsx";
+import Form from "./Components/Form.jsx";
+import Result from "./Components/Result.jsx";
+import TopButtons from "./Components/TopBar.jsx";
 
 function App() {
   //const [count, setCount] = useState(0)
