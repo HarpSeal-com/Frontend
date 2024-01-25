@@ -4,7 +4,9 @@ export default {
       "./src/**/*.{html,js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    fontFamily: {
+      "gotham": ["Gotham", 'Figtree', 'system-ui', 'Avenir', 'Helvetica', 'Arial', 'sans-serif']
+    }
   },
   plugins: [],
 }

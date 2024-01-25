@@ -34,7 +34,7 @@ function App() {
     <ProductContext.Provider value={{autoRedirect, setAutoRedirect}}>
         <TopButtons />
     </ProductContext.Provider>
-
+    
     <h1 className={"Title"}>HarpSeal</h1>
     <div className={"titleDiv"} onMouseEnter={turnOnAnimation} onMouseLeave={turnAnimationOff}>
         <img src={logo} className={"logo"} id={"logo"} alt="logo"/>
