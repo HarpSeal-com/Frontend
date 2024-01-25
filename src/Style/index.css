@@ -4,7 +4,7 @@
   -moz-osx-font-smoothing: grayscale;
 
   width: 100%;
-  height: 100%;
+  height: 100vh;
 }
 
 html {
@@ -23,7 +23,7 @@ body {
   animation: AnimationName 7s ease infinite;
 
   width: 100%;
-  height: 100%;
+  height: 100vh;
   overflow-x: hidden;
 
 }

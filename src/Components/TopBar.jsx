@@ -1,5 +1,5 @@
 //import {useState} from "react";
-import '../Style/TopButtons.css'
+import '../Style/TopButtons.scss'
 import '@coreui/coreui/dist/css/coreui.min.css'
 import {CFormSwitch} from "@coreui/react";
 import {useState, useEffect, createContext, useContext} from "react";
@@ -19,7 +19,7 @@ function TopButtons() {
 
     return (
         <div className={"formButtonsTop"}>
-            <label className={"formButtonsTopLabel"}>Auto redirect</label>
+            <label className={"formButtonsTopLabel"} class="text-white font-gotham ">Auto redirect</label>
             <CFormSwitch id="formSwitchCheckDefaultNormal" label={""} onClick={changeAutoRedirect}/>
         </div>
     )
