@@ -11,10 +11,12 @@ function Form() {
     const {category, setCategory} = useContext(ProductContext);
     const {buttonPressed, setButtonPressed} = useContext(ProductContext);
     const {apiData, setApiData} = useContext(ProductContext);
+    const {modalTip, setModalTip} = useContext(ProductContext);
 
     const productUpdate = (e) => {
         setProductName(e.target.value)
     }
+
 
     const categoryUpdate = (e) => {
         setCategory(e.target.value)
@@ -38,6 +40,8 @@ function Form() {
 
     return (
         <div className={"formWrapper"}>
+            <CButton color="light" id={"Tips-Button"} onClick={setModalTip(true)}>How to use</CButton>
+
             <CFormInput type="text" id="floatingInput" floatingClassName="mb-3" floatingLabel="Product Name" placeholder="" onChange={productUpdate} required={true}/>
 
             <CFormSelect size="lg" className="" aria-label="Large select example" id={"selector"} onChange={categoryUpdate}>

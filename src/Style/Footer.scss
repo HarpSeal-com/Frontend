@@ -5,5 +5,15 @@
   padding: 10px;
   padding-right: 15px;
   top: 95vh;
+}
 
+.footer-text {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+@media (max-width: 500px) {
+  .FooterComponent {
+    top: 100vh;
+  }
 }

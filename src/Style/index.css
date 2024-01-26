@@ -13,6 +13,11 @@ html {
     overflow-x: hidden;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 body {
   background: linear-gradient(5deg, #1e9778, #cb48a1, #dea755, #bfe066, #64b381);
   background-size: 300% 300%;

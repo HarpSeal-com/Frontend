@@ -16,23 +16,25 @@ function Result() {
     const {productName} = useContext(ProductContext);
 
     return (
-        <CCard className="Product-Card">
-            <CCardImage orientation="top" src={amazonIcon}/>
-            <CCardBody>
-                <CCardTitle>HarpSeal found the Deal at {"Amazon"}</CCardTitle>
-                <CCardText>
+        <div className="Wrapper">
+            <CCard className="Product-Card">
+                <CCardImage orientation="top" src={amazonIcon}/>
+                <CCardBody>
+                    <CCardTitle>HarpSeal found the Deal at {"Amazon"}</CCardTitle>
+                    <CCardText>
 
-                </CCardText>
-            </CCardBody>
-            <CListGroup flush>
-                <CListGroupItem>Product:  <span className="Small-Text">{productName}</span></CListGroupItem>
-                <CListGroupItem>Vendor: <span className="Small-Text">{"Amazon"}</span></CListGroupItem>
-                <CListGroupItem>Price:  <span className="Small-Text"> £{599}</span></CListGroupItem>
-            </CListGroup>
-            <CCardBody>
-                <a href={""}><CButton color="primary">Check it out</CButton></a>
-            </CCardBody>
-        </CCard>
+                    </CCardText>
+                </CCardBody>
+                <CListGroup flush>
+                    <CListGroupItem>Product:  <span className="Small-Text">{productName}</span></CListGroupItem>
+                    <CListGroupItem>Vendor: <span className="Small-Text">{"Amazon"}</span></CListGroupItem>
+                    <CListGroupItem>Price:  <span className="Small-Text"> £{599}</span></CListGroupItem>
+                </CListGroup>
+                <CCardBody>
+                    <a href={""}><CButton color="primary">Check it out</CButton></a>
+                </CCardBody>
+            </CCard>
+        </div>
     )
 }
 

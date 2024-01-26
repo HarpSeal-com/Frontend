@@ -16,6 +16,7 @@ function App() {
     const [buttonPressed, setButtonPressed] = useState(false)
     const [apiData, setApiData] = useState({})
     const [autoRedirect, setAutoRedirect] = useState(false);
+    const [modalTip, setModalTip] = useState(false);
 
     useEffect(() => {
       if (buttonPressed) {
@@ -37,16 +38,16 @@ function App() {
     </ProductContext.Provider>
     
     <div className={"appName"}>
-        <img src={logo} className={"logoTop"} id={"logoTop"} alt="logo"/>
-        <h1 className={"Title"}>HarpSeal</h1>
+        <a href="http://localhost:5173/"><img src={logo} className={"logoTop"} id={"logoTop"} alt="logo"/></a>
+        <a href="http://localhost:5173/"><h1 className={"Title"}>HarpSeal</h1></a>
     </div>
 
     <div className={"titleDiv"}>
         <img src={logo} className={"logo"} id={"logo"} alt="logo"/>
     </div>
 
-    <ProductContext.Provider value={{productName, setProductName, category, setCategory, buttonPressed, setButtonPressed, apiData, setApiData, autoRedirect}}>
-        {!buttonPressed ? <Form/> : autoRedirect ? window.open('http://localhost:8080', '_blank') && <Result/>: <Result/>}
+    <ProductContext.Provider value={{productName, setProductName, category, setCategory, buttonPressed, setButtonPressed, apiData, setApiData, autoRedirect, modalTip, setModalTip}}>
+        {modalTip ? <Modal/> : !buttonPressed ? <Form/> : autoRedirect ? window.open('http://localhost:8080', '_blank') && <Result/>: <Result/>}
     </ProductContext.Provider>
     </>
   )

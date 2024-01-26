@@ -1,14 +1,18 @@
 //import {useState} from "react";
 import '../Style/Footer.scss'
 import '@coreui/coreui/dist/css/coreui.min.css'
-import {CFooter, CLink} from "@coreui/react";
+import {CFooter, CLink, CTooltip} from "@coreui/react";
 
 function TopButtons() {
 
     return (
         <CFooter className={"FooterComponent"}>
             <div>
-                <CLink href="https://github.com/HarpSeal-com" target={'_blank'}>HarpSeal</CLink>
+                <CLink href="https://github.com/HarpSeal-com" target={'_blank'}>
+                    <CTooltip content="Visit Github repository" placement="top">
+                        <span className='footer-text'>HarpSeal</span>
+                    </CTooltip>
+                </CLink>
                 <span>&copy; 2023 opensource.</span>
             </div>
             <div>
@@ -16,7 +20,11 @@ function TopButtons() {
             </div>
             <div>
                 <span>Created by </span>
-                <CLink href="https://github.com/Emad-Eldin-G" target={'_blank'}>Emad-Eldin-G</CLink>
+                <CLink href="https://github.com/Emad-Eldin-G" target={'_blank'}>
+                    <CTooltip content="Check out my Github Profile" placement="top">
+                        <span className='footer-text'>Emad-Eldin-G</span>
+                    </CTooltip>
+                </CLink>
             </div>
         </CFooter>
     )

@@ -19,7 +19,7 @@ function TopButtons() {
 
     return (
         <div className={"formButtonsTop"}>
-            <label className={"formButtonsTopLabel"} class="text-white font-gotham ">Auto redirect</label>
+            <label className={"formButtonsTopLabel"}>Auto redirect</label>
             <CFormSwitch id="formSwitchCheckDefaultNormal" label={""} onClick={changeAutoRedirect}/>
         </div>
     )
