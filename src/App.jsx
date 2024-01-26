@@ -17,17 +17,18 @@ function App() {
     const [apiData, setApiData] = useState({})
     const [autoRedirect, setAutoRedirect] = useState(false);
 
+    useEffect(() => {
+      if (buttonPressed) {
+        const logo = document.getElementById("logoTop");
+        const logo2 = document.getElementById("logo");
+        // play animation --> running
+        logo.style.visibility = "visible";
+        logo.style.opacity = "1";
+        logo2.style.display = "none";
 
-    const turnOnAnimation = () => {
-      // Turn animation-play-state to running      
-      document.getElementById("logo").style.animationPlayState = "running";
-  }
-
-  const turnAnimationOff = () => {
-      // Turn animation-play-state to paused
-      document.getElementById("logo").style.animationPlayState = "paused";
-  }
-
+        }
+    }
+    )
 
   return (
     <>
@@ -35,8 +36,12 @@ function App() {
         <TopButtons />
     </ProductContext.Provider>
     
-    <h1 className={"Title"}>HarpSeal</h1>
-    <div className={"titleDiv"} onMouseEnter={turnOnAnimation} onMouseLeave={turnAnimationOff}>
+    <div className={"appName"}>
+        <img src={logo} className={"logoTop"} id={"logoTop"} alt="logo"/>
+        <h1 className={"Title"}>HarpSeal</h1>
+    </div>
+
+    <div className={"titleDiv"}>
         <img src={logo} className={"logo"} id={"logo"} alt="logo"/>
     </div>
 
