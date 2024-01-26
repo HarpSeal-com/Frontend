@@ -8,6 +8,7 @@ import {ProductContext} from "./Contexts/ProductContext.jsx";
 import Form from "./Components/Form.jsx";
 import Result from "./Components/Result.jsx";
 import TopButtons from "./Components/TopBar.jsx";
+import Modal from "./Components/Modal.jsx";
 
 function App() {
   //const [count, setCount] = useState(0)
@@ -47,7 +48,8 @@ function App() {
     </div>
 
     <ProductContext.Provider value={{productName, setProductName, category, setCategory, buttonPressed, setButtonPressed, apiData, setApiData, autoRedirect, modalTip, setModalTip}}>
-        {modalTip ? <Modal/> : !buttonPressed ? <Form/> : autoRedirect ? window.open('http://localhost:8080', '_blank') && <Result/>: <Result/>}
+        {!buttonPressed ? <Form/> : autoRedirect ? window.open('http://localhost:8080', '_blank') && <Result/> : <Result/>}
+        {modalTip ? <Modal/> : null}
     </ProductContext.Provider>
     </>
   )

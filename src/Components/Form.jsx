@@ -28,7 +28,10 @@ function Form() {
         } else if (category.length <= 0) {
             alert("Please select a category")
         }
+    }
 
+    const openModal = () => {
+        setModalTip(true)
     }
 
     const apiCall = () => {
@@ -40,7 +43,7 @@ function Form() {
 
     return (
         <div className={"formWrapper"}>
-            <CButton color="light" id={"Tips-Button"} onClick={setModalTip(true)}>How to use</CButton>
+            <CButton color="light" id={"Tips-Button"} onClick={openModal}>How to use</CButton>
 
             <CFormInput type="text" id="floatingInput" floatingClassName="mb-3" floatingLabel="Product Name" placeholder="" onChange={productUpdate} required={true}/>
 
