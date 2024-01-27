@@ -1,7 +1,7 @@
 import {createContext, useContext, useEffect, useState} from "react";
 import '../Style/form.scss'
 import '@coreui/coreui/dist/css/coreui.min.css'
-import {CFormInput, CFormSelect, CButton, CAlert, CCallout} from "@coreui/react";
+import {CFormInput, CFormSelect, CButton, CModal, CModalBody, CModalFooter, CModalTitle, CModalHeader} from "@coreui/react";
 import {ProductContext} from "../Contexts/ProductContext.jsx";
 
 function Form() {
@@ -11,7 +11,7 @@ function Form() {
     const {category, setCategory} = useContext(ProductContext);
     const {buttonPressed, setButtonPressed} = useContext(ProductContext);
     const {apiData, setApiData} = useContext(ProductContext);
-    const {modalTip, setModalTip} = useContext(ProductContext);
+    const [visible, setVisible] = useState(false)
 
     const productUpdate = (e) => {
         setProductName(e.target.value)
@@ -30,10 +30,6 @@ function Form() {
         }
     }
 
-    const openModal = () => {
-        setModalTip(true)
-    }
-
     const apiCall = () => {
 
         setButtonPressed(true)
@@ -43,7 +39,40 @@ function Form() {
 
     return (
         <div className={"formWrapper"}>
-            <CButton color="light" id={"Tips-Button"} onClick={openModal}>How to use</CButton>
+            <CButton color="light" id={"Tips-Button"} onClick={() => setVisible(!visible)}>How to use</CButton>
+            <CModal
+            backdrop="static"
+            visible={visible}
+            onClose={() => setVisible(false)}
+            aria-labelledby="StaticBackdropExampleLabel"
+            >
+                <CModalHeader>
+                    <CModalTitle id="StaticBackdropExampleLabel">How to use Tips</CModalTitle>
+                </CModalHeader>
+                <CModalBody>
+                    <ul>
+                        <li className={"main-li"}><span className={"li-title"}>Don't be vague:</span> 
+                            <ul>
+                                    <li>i 14 ❌</li>
+                                    <li>iPhone 14 Pro Silver 256GB ✅</li>
+                            </ul>
+                        </li>
+                        <li className={"main-li"}><span className={"li-title"}>Don't type in non-existent products </span> </li>
+                        <li className={"main-li"}><span className={"li-title"}>Select appropriate product category:</span>
+                            <ul>
+                                <li>LG OLED 65 --> TVs</li>
+                                <li>Xbox series X --> Consoles</li>
+                            </ul>
+                        </li>
+                        <li className={"main-li"}><span className={"li-title"}>Auto Direct switch</span> will take you to your product after the Seal finds the Deal</li>
+                    </ul>
+                </CModalBody>
+                <CModalFooter>
+                    <CButton color="primary" onClick={() => setVisible(false)}>
+                        Perfect
+                    </CButton>
+                </CModalFooter>
+            </CModal>
 
             <CFormInput type="text" id="floatingInput" floatingClassName="mb-3" floatingLabel="Product Name" placeholder="" onChange={productUpdate} required={true}/>
 

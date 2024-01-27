@@ -21,6 +21,25 @@
   transition: ease-in-out all .5s;
 }
 
+.main-li {
+  margin-bottom: 10px;
+  font-weight: 500;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; 
+}
+
+.main-li::marker {
+  color: #cb55a1;
+}
+
+.li-title {
+  font-weight: 600;
+}
+
 #selector {
   width: 600px;
   height: 55px;

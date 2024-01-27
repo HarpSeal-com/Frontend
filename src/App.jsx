@@ -8,7 +8,6 @@ import {ProductContext} from "./Contexts/ProductContext.jsx";
 import Form from "./Components/Form.jsx";
 import Result from "./Components/Result.jsx";
 import TopButtons from "./Components/TopBar.jsx";
-import Modal from "./Components/Modal.jsx";
 
 function App() {
   //const [count, setCount] = useState(0)
@@ -17,7 +16,6 @@ function App() {
     const [buttonPressed, setButtonPressed] = useState(false)
     const [apiData, setApiData] = useState({})
     const [autoRedirect, setAutoRedirect] = useState(false);
-    const [modalTip, setModalTip] = useState(false);
 
     useEffect(() => {
       if (buttonPressed) {
@@ -47,9 +45,8 @@ function App() {
         <img src={logo} className={"logo"} id={"logo"} alt="logo"/>
     </div>
 
-    <ProductContext.Provider value={{productName, setProductName, category, setCategory, buttonPressed, setButtonPressed, apiData, setApiData, autoRedirect, modalTip, setModalTip}}>
+    <ProductContext.Provider value={{productName, setProductName, category, setCategory, buttonPressed, setButtonPressed, apiData, setApiData, autoRedirect}}>
         {!buttonPressed ? <Form/> : autoRedirect ? window.open('http://localhost:8080', '_blank') && <Result/> : <Result/>}
-        {modalTip ? <Modal/> : null}
     </ProductContext.Provider>
     </>
   )
