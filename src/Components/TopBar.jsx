@@ -12,11 +12,6 @@ function TopButtons() {
         setAutoRedirect(!autoRedirect);
     }
 
-    useEffect(() => {
-        const redirect = createContext(autoRedirect);
-        console.log(redirect);
-    }, [autoRedirect]);
-
     return (
         <div className={"formButtonsTop"}>
             <label className={"formButtonsTopLabel"}>Auto redirect</label>
