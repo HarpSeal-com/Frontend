@@ -1,4 +1,5 @@
 import {createContext, useContext, useEffect, useState} from "react";
+import axios from "axios";
 import '../Style/form.scss'
 import '@coreui/coreui/dist/css/coreui.min.css'
 import {CFormInput, CFormSelect, CButton, CModal, CModalBody, CModalFooter, CModalTitle, CModalHeader} from "@coreui/react";
@@ -31,6 +32,25 @@ function Form() {
     }
 
     const apiCall = () => {
+        console.log('API CALLED')
+        // api call below
+        axios.post('http://127.0.0.1:8000/api/getProduct', {
+            product: productName,
+            category: category
+        })
+            .then(function (response) {
+                console.log(response);
+                let newObject = {
+                    Link: response.data['Link'],
+                    Price: response.data['Price'],
+                    Retailer: response.data['Retailer']
+                }
+
+                setApiData(apiData, newObject)
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
 
         setButtonPressed(true)
     }
@@ -84,7 +104,7 @@ function Form() {
                 <option value="4">TVs</option>
             </CFormSelect>
 
-            <CButton color="light" id={"Submit"} disabled={!isButtonDisabled} onMouseEnter={alertSubmit} onClick={apiCall}>Seal the Deal</CButton>
+            <CButton color="light" type="button" id={"Submit"} disabled={!isButtonDisabled} onMouseEnter={alertSubmit} onClick={apiCall}>Seal the Deal</CButton>
         </div>
     )
 }
