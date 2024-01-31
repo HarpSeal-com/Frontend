@@ -6,7 +6,7 @@
     height: 100vh;
 }
 
-.circleLoader {
+.circleLoad {
     -webkit-animation:spin 4s linear infinite;
     -moz-animation:spin 4s linear infinite;
     animation:spin 4s linear infinite;

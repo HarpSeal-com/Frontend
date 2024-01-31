@@ -38,15 +38,16 @@ function Form() {
             product: productName,
             category: category
         })
-            .then(function (response) {
-                console.log(response);
+            .then((response) => response.json())
+            .then(function (data) {
+                console.log(data);
                 let newObject = {
-                    Link: response.data['Link'],
-                    Price: response.data['Price'],
-                    Retailer: response.data['Retailer']
+                    Link: data['Link'],
+                    Price: data['Price'],
+                    Retailer: data['Retailer']
                 }
 
-                setApiData(apiData, newObject)
+                setApiData(newObject)
             })
             .catch(function (error) {
                 console.log(error);
@@ -80,8 +81,8 @@ function Form() {
                         <li className={"main-li"}><span className={"li-title"}>Don't type in non-existent products </span> </li>
                         <li className={"main-li"}><span className={"li-title"}>Select appropriate product category:</span>
                             <ul>
-                                <li>LG OLED 65 --> TVs</li>
-                                <li>Xbox series X --> Consoles</li>
+                                <li>{"LG OLED 65 --> TVs"}</li>
+                                <li>{"Xbox series X --> Consoles"}</li>
                             </ul>
                         </li>
                         <li className={"main-li"}><span className={"li-title"}>Auto Direct switch</span> will take you to your product after the Seal finds the Deal</li>
