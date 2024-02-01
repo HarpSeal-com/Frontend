@@ -38,8 +38,8 @@ function App() {
     </ProductContext.Provider>
     
     <div className={"appName"}>
-        <a href="http://localhost:5173/"><img src={logo} className={"logoTop"} id={"logoTop"} alt="logo"/></a>
-        <a href="http://localhost:5173/"><h1 className={"Title"}>HarpSeal</h1></a>
+        <a href="https://harpseal.vercel.app/"><img src={logo} className={"logoTop"} id={"logoTop"} alt="logo"/></a>
+        <a href="https://harpseal.vercel.app/"><h1 className={"Title"}>HarpSeal</h1></a>
     </div>
 
     <div className={"titleDiv"}>
