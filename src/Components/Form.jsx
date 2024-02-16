@@ -34,7 +34,7 @@ function Form() {
     const apiCall = () => {
         console.log('API CALLED')
         // api call below
-        axios.post('http://127.0.0.1:8000/api/getProduct', {
+        axios.post('https://harpseal.azurewebsites.net/api/getProduct', {
             product: productName,
             category: category
         })
