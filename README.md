@@ -1,4 +1,7 @@
-# React + Vite
+# HarpSeal - Seal the Deal
 
-Frontend (Done)   
-Backend (In-PROGRESS)
+1) Type in what you want ⌨️
+2) The harpseal redirects you 🦭
+3) You buy 🚀
+
+<img src="https://github.com/HarpSeal-com/Frontend/blob/main/public/logo.png">
